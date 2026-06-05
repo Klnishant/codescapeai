@@ -7,11 +7,11 @@ function Blog() {
     <section className="bg-white py-16 w-full">
           <div className="mx-auto px-12">
             <div className="flex mb-10 flex-col items-center gap-2">
-              <span className="font-semibold uppercase text-[#c10007] text-xs leading-4 tracking-widest">
+              {/* <span className="font-semibold uppercase text-[#c10007] text-xs leading-4 tracking-widest">
                 Latest News
-              </span>
+              </span> */}
               <h2 className="font-black text-center text-zinc-950 text-3xl leading-9 tracking-tight">
-                From Our<span className="text-[#c10007]">Blog</span>
+                From Our <span className="text-[#c10007]">Blog</span>
               </h2>
             </div>
             <div className="grid grid-cols-4 gap-6">

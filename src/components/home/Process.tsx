@@ -7,11 +7,11 @@ function Process() {
             <div className="grid grid-cols-3 items-center gap-12">
               <div className="col-span-2">
                 <div className="flex mb-8 flex-col gap-2">
-                  <span className="font-semibold uppercase text-[#c10007] text-xs leading-4 tracking-widest">
+                  {/* <span className="font-semibold uppercase text-[#c10007] text-xs leading-4 tracking-widest">
                     How We Work
-                  </span>
+                  </span> */}
                   <h2 className="font-black text-zinc-950 text-3xl leading-9 tracking-tight">
-                    Our<span className="text-[#c10007]">Process</span>
+                    Our <span className="text-[#c10007]">Process</span>
                   </h2>
                   <p className="text-[#71717b] text-sm leading-5">
                     A streamlined approach that ensures quality delivery every
@@ -91,14 +91,14 @@ function Process() {
                     data-blurhash="LLMQ#C_4~q?as*xu9GM{D%oeM_M{"
                   />
                 </div>
-                <div className="shadow-lg rounded-full bg-[#c10007] flex absolute -right-3 -top-3 flex-col justify-center items-center w-16 h-16">
+                {/* <div className="shadow-lg rounded-full bg-[#c10007] flex absolute -right-3 -top-3 flex-col justify-center items-center w-16 h-16">
                   <span className="leading-none font-black text-red-50 text-lg leading-7">
                     12+
                   </span>
                   <span className="leading-none text-red-200 text-[9px]">
                     Years
                   </span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
