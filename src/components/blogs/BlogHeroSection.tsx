@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { COLORS } from "@/lib/constants";
+import ParticlesComponent from "../particles-bg";
 type Blog = {
   _id: string;
   title?: string;
@@ -70,12 +71,8 @@ const BlogsHeroSection = () => {
     <section className="w-full  bg-[#FAF9F8] pb-20 md:pb-24 lg:pb-28 pt-40 md:pt-44 lg:pt-48">
       <div className="relative mx-auto max-w-[1920px] px-4 sm:px-6 lg:px-16">
         {/* Background graphic behind hero (centered horizontally) */}
-        <div className="pointer-events-none absolute z-0 -top-[7%] md:-top-[30%] left-1/2 w-[393px] h-[399px] md:h-[834px] md:w-[820px] -translate-x-[48%]">
-          <img
-            src="/article-bg.png"
-            alt="Articles background"
-            className="h-full w-full object-contain opacity-50 md:opacity-90"
-          />
+        <div className="pointer-events-none absolute z-0 -top-[7%] md:-top-[30%] w-full h-fit">
+          <ParticlesComponent />
         </div>
         {/* Top heading + copy + CTA */}
         <div className="flex flex-col items-center justify-center gap-8 text-center mb-16">

@@ -40,6 +40,7 @@ import Services from "@/components/home/Services";
 import Trust from "@/components/home/Trust";
 import Hero from "@/components/home/Hero";
 import Navbar from "@/components/core/Navbar";
+import FAQ from "@/components/home/FAQ";
 
 export default function Home() {
   return (
@@ -54,6 +55,7 @@ export default function Home() {
         <Process />
         <Blog />
         <Contact />
+        <FAQ />
         <Footer />
       </div>
     </div>

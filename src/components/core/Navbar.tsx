@@ -2,6 +2,7 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import { Aperture, ArrowUpRight } from 'lucide-react'
+import SparkleNavbar from '../lightswind/sparkle-navbar';
 
 function Navbar() {
   return (
@@ -15,7 +16,7 @@ function Navbar() {
                 TECHNO<span className="text-[#c10007]">GO</span>
               </span>
             </div>
-            <nav className="flex items-center gap-6">
+            {/* <nav className="flex items-center gap-6">
               <a className="font-semibold text-[#c10007] text-sm leading-5 border-[#c10007] border-t-0 border-r-0 border-b-2 border-l-0 border-solid pb-0.5">
                 Home
               </a>
@@ -37,7 +38,11 @@ function Navbar() {
               <a className="transition-colors font-medium text-zinc-950/80 text-sm leading-5">
                 Contact
               </a>
-            </nav>
+            </nav> */}
+            <SparkleNavbar
+              items={['Home', 'About', 'Services', 'Testimonial', 'Blog', 'Portfolio', 'Contact']}
+              color="#c10007"
+              />
             <Button className="shrink-0 font-semibold rounded-full bg-[#c10007] text-red-50 text-sm leading-5 flex px-5 items-center gap-1.5 h-9">
               Get a Free Quote
               <ArrowUpRight className="size-4" />

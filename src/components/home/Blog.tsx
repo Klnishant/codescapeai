@@ -98,7 +98,7 @@ function Blog() {
             </div>
             <div className="grid grid-cols-4 gap-6">
               {
-                blogs && blogs.map((blog) => (
+                blogs && blogs?.map((blog) => (
                   <BlogCard key={blog._id} blog={blog} />
                 ))
               }
