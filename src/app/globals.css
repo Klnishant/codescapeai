@@ -129,3 +129,23 @@
     @apply font-sans;
   }
 }
+@keyframes spinReverse {
+  from {
+    transform: rotateX(70deg) rotate(360deg);
+  }
+
+  to {
+    transform: rotateX(70deg) rotate(0deg);
+  }
+}
+
+@keyframes floatGlobe {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}

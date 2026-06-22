@@ -42,6 +42,15 @@ function Navbar() {
             <SparkleNavbar
               items={['Home', 'About', 'Services', 'Testimonial', 'Blog', 'Portfolio', 'Contact']}
               color="#c10007"
+              itemsLinks={[
+                { item: 'Home', link: '/' },
+                { item: 'About', link: '/about' },
+                { item: 'Services', link: '/services' },
+                { item: 'Testimonial', link: '/testimonial' },
+                { item: 'Blog', link: '/blogs' },
+                { item: 'Portfolio', link: '/portfolio' },
+                { item: 'Contact', link: '/contact' },
+              ]}
               />
             <Button className="shrink-0 font-semibold rounded-full bg-[#c10007] text-red-50 text-sm leading-5 flex px-5 items-center gap-1.5 h-9">
               Get a Free Quote

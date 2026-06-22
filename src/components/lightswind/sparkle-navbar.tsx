@@ -1,5 +1,11 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
+import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
 import { gsap } from "gsap";
+import { usePathname, useRouter } from "next/navigation";
+
+interface ItemLink {
+  item: string;
+  link: string;
+}
 
 // Define the props for the reusable component.
 interface SparkleNavbarProps {
@@ -14,6 +20,10 @@ interface SparkleNavbarProps {
    * @example '#1E90FF' (a shade of blue)
    */
   color?: string;
+  /**
+    * link: The link for the active state text shadow, box shadow, and other effects.
+   */
+  itemsLinks: ItemLink[];
 }
 
 /**
@@ -26,6 +36,7 @@ interface SparkleNavbarProps {
 const SparkleNavbar: React.FC<SparkleNavbarProps> = ({
   items,
   color = "#00fffc",
+  itemsLinks,
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -33,6 +44,21 @@ const SparkleNavbar: React.FC<SparkleNavbarProps> = ({
   const navRef = useRef<HTMLDivElement>(null);
   const activeElementRef = useRef<HTMLDivElement>(null);
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  const router = useRouter();
+  const pathname = usePathname();
+//   const activeIndex = Math.max(
+//   itemsLinks.findIndex(
+//     (item) => item.link === pathname
+//   ),
+//   0
+// );
+
+useEffect(() => {
+  setActiveIndex(
+    itemsLinks.findIndex((item) => item.link === pathname)
+  );
+}, [pathname]);
 
   // Function to create the SVG content for the active element.
   const createSVG = (element: HTMLDivElement) => {
@@ -91,6 +117,7 @@ const updateActiveElement = (button: HTMLButtonElement) => {
   // initial position of the active element is correct before the first paint.
   useLayoutEffect(() => {
   const activeButton = buttonRefs.current[activeIndex];
+  if (!activeButton) return;
 
   if (
     navRef.current &&
@@ -104,7 +131,7 @@ const updateActiveElement = (button: HTMLButtonElement) => {
       duration: 0.2,
     });
   }
-}, []);
+}, [activeIndex]);
 
   // Handler for button clicks, which triggers the animation.
   const handleClick = (index: number) => {
@@ -176,7 +203,7 @@ const x = newRect.left - navRect.left;
 });
             // Update the state after the animation completes to trigger a re-render
             // with the new active item.
-            setActiveIndex(index);
+            //setActiveIndex(index);
           },
         },
       ],
@@ -192,6 +219,7 @@ const x = newRect.left - navRect.left;
     gsap.set(activeElement, {
   "--active-element-width": `${newRect.width}px`,
 });
+  router.push(itemsLinks[index].link);
   };
 
   return (
